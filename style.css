@@ -1,0 +1,158 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+#header{
+    padding: 20px 0;
+    background: mediumslateblue;
+}
+.container{
+    width: 90%;
+    margin: 0 auto;
+}
+
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-logo{
+    color: seashell;
+    font-size: 38px;
+}
+.header-nav{
+    display: flex;
+}
+.header-nav a{
+    color: seashell;
+    margin: 0 15px;
+    font-size: 1.5rem;
+    text-decoration: none;
+    position: relative;
+}
+.burger-menu{
+    display: none;
+    position: relative;
+}
+a:after{
+    content: "";
+    position: absolute;
+    width: 0;
+    left: 50%;
+    bottom: 0;
+    height: 3px;
+    background: red;
+    transition: .2s;
+}
+
+a:before{
+    content: "";
+    position: absolute;
+    width: 0;
+    right: 50%;
+    bottom: 0;
+    height: 3px;
+    background: red;
+    transition: .2s;
+}
+a:hover:before{
+    width: 50%;
+}
+a:hover:after{
+    width: 50%;
+}
+a:hover{
+    transition: .4s;
+    color: red;
+}
+
+.burger-item{
+    width: 40px;
+    height: 3px;
+    background: seashell;
+    margin: 8px 0;
+    border-radius: 4px;
+}
+@media (max-width: 768px) {
+    .container{
+        width: 90%;
+    }
+    .burger-menu{
+        display: flex;
+        flex-direction: column;
+        z-index: 20;
+        position: relative;
+
+    }
+    .header-nav{
+        position: absolute;
+        flex-direction: column;
+        align-items: start;
+        right: 0;
+        top: 0;
+        background: mediumslateblue;
+        padding: 20% 10% 10% 10%;
+        z-index: 2;
+        transform: translateX(100%);
+        margin: 40px 0;
+        transition: .4s;
+    }
+    .header-nav a{
+        margin: 10px 0;
+    }
+}
+
+.hero{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.hero-block p{
+    font-size: 20px;
+    font-weight: 400;
+    color: black;
+    width: 300px;
+}
+
+.modal-window{
+    background: mediumslateblue;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    border-radius: 10px;
+    position: relative;
+    left: 34%;
+    top: 30%;
+    transform: scale(0);
+    transition: .2s;
+}
+.close-modal{
+    cursor: pointer;
+    font-size: 3rem;
+    color: white;
+    position: absolute;
+    right: 20px;
+    top: 0;
+    transition: top.3s;
+}
+.close-modal:hover{
+    color: darkred;
+    transform: scale(1.2);
+}
+.blur-window{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 2200px;
+    height: 1400px;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(6px);
+    display: none;
+}
